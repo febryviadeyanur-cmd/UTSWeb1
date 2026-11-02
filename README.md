@@ -279,3 +279,229 @@ Satu file JavaScript untuk kelima halaman. Tiap bagian dibungkus `if (elemen)`, 
 - Di bagian bawah ada `@font-face` untuk font Lora dan Source Sans 3 yang ditanam langsung.
 
 ![alt text](<screenshots/style css.png>)
+
+# Naskah Presentasi UTS Pemrograman Web 1
+
+**Nama:** Febryvia Deya Nur Havidtar Murti Aqsa  
+**NIM:** 312510194  
+**Kelas:** I251B  
+**Program Studi:** Teknik Informatika  
+**Proyek:** Toko Buku Online  
+**Durasi Presentasi:** ± 8 Menit
+
+---
+
+## Daftar Isi
+
+1. [Pembukaan dan Perkenalan Proyek](#1-pembukaan-dan-perkenalan-proyek)
+2. [Struktur Folder dan Teknologi](#2-struktur-folder-dan-teknologi)
+3. [Halaman Login: Kode dan Hasil](#3-halaman-login-kode-dan-hasil)
+4. [Dashboard dan Data Buku](#4-dashboard-dan-data-buku)
+5. [Katalog dan Pengelolaan Stok](#5-katalog-dan-pengelolaan-stok)
+6. [Pemesanan dan Perhitungan Pembayaran](#6-pemesanan-dan-perhitungan-pembayaran)
+7. [Tracking Pengiriman](#7-tracking-pengiriman-dan-hasilnya)
+8. [CSS, Kesimpulan, dan Penutup](#8-css-kesimpulan-dan-penutup)
+
+---
+
+## 1. Pembukaan dan Perkenalan Proyek
+
+**Tampilan:** Halaman website di browser.
+
+Assalamu’alaikum warahmatullahi wabarakatuh.
+
+Perkenalkan, nama saya Febryvia Deya Nur Havidtar Murti Aqsa, NIM 312510194, dari kelas I251B, Program Studi Teknik Informatika.
+
+Pada kesempatan kali ini, saya akan mempresentasikan proyek UTS mata kuliah Pemrograman Web 1, yaitu website Toko Buku Online.
+
+Saya akan menjelaskan struktur kode program yang digunakan, fungsi dari setiap bagian kode, serta hasil implementasinya pada website. Website ini dikembangkan menggunakan HTML, CSS, dan JavaScript.
+
+## 2. Struktur Folder dan Teknologi
+
+**Tampilan:** Struktur folder proyek di Visual Studio Code.
+
+Pertama, saya akan menjelaskan struktur folder dari proyek ini.
+
+Di dalam folder utama terdapat lima file HTML, yaitu `index.html`, `dashboard.html`, `stok.html`, `checkout.html`, dan `tracking.html`.
+
+Kemudian, terdapat folder `css` yang berisi `style.css` untuk mengatur tampilan website.
+
+Ada juga folder `js` yang berisi dua file, yaitu `data.js` dan `script.js`.
+
+File `data.js` digunakan untuk menyimpan data contoh, seperti akun pengguna, katalog buku, dan informasi pengiriman. Sementara itu, `script.js` digunakan untuk menjalankan fungsi-fungsi website, seperti validasi login, pencarian buku, perhitungan pembayaran, dan pelacakan pengiriman.
+
+Pemisahan file ini bertujuan agar struktur HTML, desain, data, dan logika program lebih mudah dipahami serta dikelola.
+
+## 3. Halaman Login: Kode dan Hasil
+
+**Tampilan:** `index.html`, `js/script.js`, kemudian halaman login di browser.
+
+Pada halaman login, saya menggunakan HTML untuk membuat struktur formulir yang terdiri dari input email, password, dan tombol login.
+
+### Potongan Kode HTML
+
+```html
+<form id="formLogin" novalidate>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password"
+           name="password" required>
+
+    <p id="pesanLogin" class="pesan"
+       aria-live="polite"></p>
+
+    <button type="submit">Login</button>
+</form>
+```
+
+Kode tersebut membentuk formulir login. Atribut `id` digunakan agar elemen dapat diakses melalui JavaScript, sedangkan elemen paragraf digunakan untuk menampilkan pesan kesalahan.
+
+Selanjutnya, saya akan menunjukkan bagian validasi login pada file `js/script.js`.
+
+Pada JavaScript, sistem mengambil email dan password yang dimasukkan pengguna, kemudian mencocokkannya dengan data akun yang tersedia di `data.js`.
+
+Jika data sesuai, nama pengguna disimpan menggunakan `localStorage`, lalu pengguna diarahkan ke dashboard.
+
+**Demonstrasi di browser:**
+
+Sebagai contoh, saya menggunakan akun Rina dengan email `rina@gmail.com` dan password `rina123`.
+
+Setelah menekan tombol login, website berhasil menampilkan dashboard.
+
+Jika email atau password salah, sistem akan menampilkan pemberitahuan. Jadi, hasil yang terlihat pada browser merupakan implementasi dari kode HTML dan JavaScript tersebut.
+
+## 4. Dashboard dan Data Buku
+
+**Tampilan:** `js/data.js`, bagian terkait pada `js/script.js`, kemudian dashboard di browser.
+
+Selanjutnya, saya akan menjelaskan dashboard dan sumber data yang digunakan.
+
+Pada file `data.js`, terdapat variabel `dataKatalogBuku` yang menyimpan informasi buku, seperti kode barang, nama buku, jenis barang, edisi, stok, harga, dan lokasi gambar sampul.
+
+Sebagai contoh, salah satu data buku memiliki kode `ASIP4301`, dengan nama Pengantar Ilmu Komunikasi, stok 548 eksemplar, dan harga Rp180.000.
+
+Data tersebut kemudian digunakan oleh JavaScript untuk mengisi informasi pada dashboard.
+
+Hasilnya, dashboard menampilkan ringkasan jumlah judul buku, total stok, jumlah pesanan, serta informasi buku yang tersedia.
+
+Tampilan dashboard juga dilengkapi dengan sapaan berdasarkan waktu, menu navigasi, dan informasi pengiriman terbaru.
+
+Dengan demikian, data yang ditampilkan tidak ditulis satu per satu secara langsung pada bagian HTML, tetapi diolah menggunakan JavaScript dari data yang telah disiapkan.
+
+## 5. Katalog dan Pengelolaan Stok
+
+**Durasi:** ± 1 menit  
+**Tampilan:** `stok.html`, bagian terkait pada `js/script.js`, kemudian halaman katalog di browser.
+
+Pada halaman katalog, tabel buku dibuat secara dinamis menggunakan JavaScript.
+
+Salah satu bagian pentingnya adalah penggunaan `document.createElement()` untuk membuat elemen HTML dan `appendChild()` untuk memasukkan elemen tersebut ke dalam tabel.
+
+### Potongan Kode JavaScript
+
+```javascript
+const baris = document.createElement("tr");
+
+const sel = document.createElement("td");
+sel.textContent = isi;
+
+baris.appendChild(sel);
+```
+
+Kode tersebut digunakan untuk membuat baris dan kolom tabel secara dinamis. Data yang dimasukkan ke dalamnya akan ditampilkan sebagai bagian dari tabel buku.
+
+Hasilnya, tabel menampilkan daftar buku beserta kode barang, nama, edisi, harga, stok, dan tombol hapus.
+
+Website juga menyediakan fitur pencarian berdasarkan kode atau nama buku.
+
+**Demonstrasi di browser:**
+
+Ketik kata `keuangan` pada kolom pencarian.
+
+Ketika kata tersebut dimasukkan, JavaScript menyaring baris tabel sehingga hanya buku yang sesuai dengan pencarian yang ditampilkan.
+
+Selain itu, tersedia formulir untuk menambahkan buku baru. Sistem memeriksa agar kode barang tidak duplikat, harga lebih dari nol, dan stok berupa bilangan bulat yang tidak negatif.
+
+Jadi, halaman ini menerapkan manipulasi DOM dan validasi input untuk membantu pengelolaan katalog buku.
+
+## 6. Pemesanan dan Perhitungan Pembayaran
+
+**Tampilan:** `checkout.html`, bagian terkait pada `js/script.js`, kemudian halaman checkout di browser.
+
+Berikutnya adalah halaman pemesanan.
+
+Pada bagian ini, JavaScript mengambil data buku dari katalog untuk mengisi pilihan buku. Pengguna dapat memilih buku, menentukan jumlah pembelian, lalu memasukkannya ke dalam keranjang.
+
+Salah satu proses penting adalah perhitungan subtotal dan total pembayaran.
+
+### Potongan Kode JavaScript
+
+```javascript
+const subtotal = hargaKeAngka(buku.harga) * item.jumlah;
+total += subtotal;
+```
+
+Pada kode tersebut, harga buku diubah menjadi angka terlebih dahulu. Setelah itu, harga dikalikan dengan jumlah pembelian untuk mendapatkan subtotal. Nilai subtotal kemudian ditambahkan ke total pembayaran.
+
+**Demonstrasi di browser:**
+
+Sebagai contoh, jika saya memilih buku Pengantar Ilmu Komunikasi seharga Rp180.000 sebanyak satu eksemplar, subtotalnya adalah Rp180.000.
+
+Jika jumlah pembelian diubah menjadi dua, totalnya menjadi Rp360.000.
+
+Setelah memilih buku, pengguna mengisi nama, email, nomor telepon, alamat pengiriman, dan metode pembayaran.
+
+Sistem akan memeriksa kelengkapan data sebelum memproses pesanan. Jika data valid, website menampilkan ringkasan pesanan dan nomor Delivery Order atau DO.
+
+Namun, perlu diperhatikan bahwa nomor DO yang dihasilkan pada halaman pemesanan masih berupa nomor acak dan belum otomatis terhubung dengan data tracking yang tersedia.
+
+## 7. Tracking Pengiriman dan Hasilnya
+
+**Tampilan:** `js/data.js`, bagian terkait pada `js/script.js`, kemudian halaman tracking di browser.
+
+Selanjutnya, terdapat fitur tracking pengiriman.
+
+Data contoh pengiriman disimpan pada variabel `dataTracking`. Setiap nomor DO memiliki informasi pemesan, status pengiriman, ekspedisi, tanggal kirim, dan total pembayaran.
+
+Ketika pengguna memasukkan nomor DO, JavaScript mencari nomor tersebut di dalam data tracking.
+
+Jika nomor ditemukan, sistem menampilkan informasi pengiriman beserta indikator progres dan riwayat perjalanan paket.
+
+**Demonstrasi di browser:**
+
+Buka halaman tracking, masukkan nomor `20230012`, kemudian tekan tombol Cari.
+
+Hasilnya, website menampilkan data pengiriman atas nama Rina Wulandari dengan status Dalam Perjalanan dan ekspedisi JNE.
+
+Jika nomor tidak ditemukan, sistem menampilkan pesan kesalahan.
+
+Fitur ini masih menggunakan data simulasi dan belum terhubung dengan API ekspedisi secara langsung.
+
+## 8. CSS, Kesimpulan, dan Penutup
+
+**Tampilan:** `css/style.css`, kemudian hasil akhir website di browser.
+
+Untuk tampilan website, saya menggunakan CSS yang disimpan terpisah pada file `style.css`.
+
+CSS digunakan untuk mengatur warna, ukuran tulisan, jarak antarelemen, tata letak, tabel, tombol, dan tampilan responsif.
+
+Hasilnya, setiap halaman memiliki tampilan yang konsisten dan dapat menyesuaikan ukuran layar, termasuk layar ponsel.
+
+Dari proyek ini, saya menerapkan HTML untuk struktur halaman, CSS untuk desain, serta JavaScript untuk pengolahan data dan interaksi pengguna.
+
+Meskipun fitur utama sudah dapat didemonstrasikan, website ini masih memiliki keterbatasan karena belum menggunakan backend dan database. Oleh karena itu, pengembangan selanjutnya dapat dilakukan dengan menambahkan penyimpanan data permanen, sistem autentikasi yang lebih aman, serta integrasi pengiriman secara langsung.
+
+Demikian presentasi proyek UTS Pemrograman Web 1 dari saya. Terima kasih atas perhatian, jika ada kesalahan kata ataupun ucapan mohon di maafkan.
+
+Wassalamu’alaikum warahmatullahi wabarakatuh.
+
+---
+LINK GIT HUB::
+
+https://github.com/febryviadeyanur-cmd/UTSWeb1
+
+LINK YOUTUBE ::
+
+https://youtu.be/IDCK2WTv1Mo?si=4MCj0x5E5UvZ9FQk
