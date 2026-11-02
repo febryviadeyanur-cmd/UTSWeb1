@@ -27,8 +27,8 @@
 
 | | |
 |---|---|
-| Repository GitHub | [isi link repository] |
-| Video penjelasan (YouTube) | [isi link YouTube] |
+| Repository GitHub | https://github.com/febryviadeyanur-cmd/UTSWeb1 |
+| Video penjelasan (YouTube) | https://youtu.be/IDCK2WTv1Mo?si=4MCj0x5E5UvZ9FQk |
 
 ## Tentang Project
 
