@@ -143,7 +143,7 @@ Akun baru juga bisa dibuat lewat tombol **Daftar**, tetapi hanya berlaku sampai 
 
 ```
 tugas-uts-web1/
-|-- index.html          (halaman login)
+|-- index.html     
 |-- dashboard.html
 |-- stok.html
 |-- tracking.html
@@ -151,13 +151,13 @@ tugas-uts-web1/
 |-- css/
 |   |-- style.css
 |-- js/
-|   |-- script.js       (logika semua halaman)
-|   |-- data.js         (dataPengguna, dataKatalogBuku, dataTracking)
+|   |-- script.js       
+|   |-- data.js        
 |-- assets/
 |   |-- logo.svg
 |   |-- logo.png
-|-- img/                (cover buku)
-|-- screenshots/        (gambar untuk README ini)
+|-- img/                
+|-- screenshots/       
 ```
 
 `script.js` dipakai bersama oleh kelima halaman. Setiap bagian kodenya hanya berjalan jika elemen halamannya ada, jadi tidak perlu satu file JS per halaman.
