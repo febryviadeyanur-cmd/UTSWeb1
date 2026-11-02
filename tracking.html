@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman | Toko Buku Online</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="merek"><a href="dashboard.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Toko Buku <em>Online</em></span></a></h1>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Katalog</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html" class="aktif">Tracking</a>
+        <button type="button" id="tombolKeluar" class="tombol-kuning">Keluar</button>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Informasi Pengiriman</h2>
+      <form id="formCari" novalidate>
+        <label for="nomorDO">Nomor Delivery Order</label>
+        <input type="text" id="nomorDO" name="nomorDO" placeholder="Contoh: 20230012" required>
+        <p class="contoh">Contoh nomor DO:
+          <button type="button" class="chip" data-do="20230012">20230012</button>
+          <button type="button" class="chip" data-do="20230013">20230013</button>
+        </p>
+        <p id="pesanCari" class="pesan" aria-live="polite"></p>
+        <button type="submit">Cari</button>
+      </form>
+    </section>
+
+    <section id="hasilTracking" hidden>
+      <h2>Hasil Pencarian</h2>
+      <div class="detail">
+        <p>Nama pemesan: <strong id="hasilNama"></strong></p>
+        <p>Status pengiriman: <strong id="hasilStatus"></strong></p>
+        <div class="bar-luar"><div id="barProgress" class="bar-isi"></div></div>
+        <p>Ekspedisi: <span id="hasilEkspedisi"></span></p>
+        <p>Tanggal kirim: <span id="hasilTanggal"></span></p>
+        <p>Jenis paket: <span id="hasilPaket"></span></p>
+        <p>Total pembayaran: <span id="hasilTotal"></span></p>
+      </div>
+      <h3>Riwayat Perjalanan</h3>
+      <ol id="daftarPerjalanan"></ol>
+    </section>
+  </main>
+  <footer>
+    <div class="kaki">
+      <div>
+        <p class="merek-kecil"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Toko Buku Online</span></p>
+        <p>Toko buku ajar online untuk mahasiswa. Cek stok, buat pesanan, dan lacak kiriman dari satu tempat.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Katalog &amp; Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking Pengiriman</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hubungi Kami</h3>
+        <ul>
+          <li>Cikarang Selatan, Kabupaten Bekasi</li>
+          <li>cs@tokobukuonline.id</li>
+          <li>0812-3456-7890 (WhatsApp)</li>
+          <li>Senin - Jumat, 08.00 - 16.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hak-cipta">&copy; 2026 Toko Buku Online - Tugas UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

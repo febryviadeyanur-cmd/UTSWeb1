@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog &amp; Stok | Toko Buku Online</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="merek"><a href="dashboard.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Toko Buku <em>Online</em></span></a></h1>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html" class="aktif">Katalog</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html">Tracking</a>
+        <button type="button" id="tombolKeluar" class="tombol-kuning">Keluar</button>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Informasi Stok / Katalog</h2>
+      <div class="alat-tabel">
+        <div class="kolom-cari">
+          <label for="cariBuku">Cari buku</label>
+          <input type="search" id="cariBuku" placeholder="Ketik judul atau kode barang">
+        </div>
+        <p class="ringkas" id="ringkasStok"></p>
+      </div>
+      <div class="bungkus-tabel">
+        <table>
+          <caption>Daftar buku (stok di bawah 200 ditandai merah)</caption>
+          <thead>
+            <tr><th>Cover</th><th>Kode</th><th>Nama Barang</th><th>Jenis</th><th>Edisi</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="isiStok"></tbody>
+        </table>
+      </div>
+      <p id="kosongStok" class="kosong tersembunyi">Tidak ada buku yang cocok dengan pencarian.</p>
+    </section>
+
+    <section>
+      <h2>Tambah Stok Baru</h2>
+      <form id="formStok" novalidate>
+        <div class="baris-form">
+          <div>
+            <label for="kodeBarang">Kode barang</label>
+            <input type="text" id="kodeBarang" name="kodeBarang" required>
+          </div>
+          <div>
+            <label for="namaBarang">Nama barang</label>
+            <input type="text" id="namaBarang" name="namaBarang" required>
+          </div>
+          <div>
+            <label for="jenisBarang">Jenis barang</label>
+            <input type="text" id="jenisBarang" name="jenisBarang" value="Buku Ajar" required>
+          </div>
+          <div>
+            <label for="edisi">Edisi</label>
+            <input type="number" id="edisi" name="edisi" min="1" required>
+          </div>
+          <div>
+            <label for="harga">Harga (Rp)</label>
+            <input type="number" id="harga" name="harga" min="1" required>
+          </div>
+          <div>
+            <label for="stok">Stok</label>
+            <input type="number" id="stok" name="stok" min="0" required>
+          </div>
+        </div>
+        <p id="pesanStok" class="pesan" aria-live="polite"></p>
+        <button type="submit">Tambah Baris</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="kaki">
+      <div>
+        <p class="merek-kecil"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Toko Buku Online</span></p>
+        <p>Toko buku ajar online untuk mahasiswa. Cek stok, buat pesanan, dan lacak kiriman dari satu tempat.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Katalog &amp; Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking Pengiriman</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hubungi Kami</h3>
+        <ul>
+          <li>Cikarang Selatan, Kabupaten Bekasi</li>
+          <li>cs@tokobukuonline.id</li>
+          <li>0812-3456-7890 (WhatsApp)</li>
+          <li>Senin - Jumat, 08.00 - 16.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hak-cipta">&copy; 2026 Toko Buku Online - Tugas UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

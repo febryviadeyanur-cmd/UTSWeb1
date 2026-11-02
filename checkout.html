@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan | Toko Buku Online</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="merek"><a href="dashboard.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Toko Buku <em>Online</em></span></a></h1>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Katalog</a>
+        <a href="checkout.html" class="aktif">Pemesanan</a>
+        <a href="tracking.html">Tracking</a>
+        <button type="button" id="tombolKeluar" class="tombol-kuning">Keluar</button>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Keranjang Pemesanan</h2>
+      <form id="formTambahItem" novalidate>
+        <div class="baris-form">
+          <div>
+            <label for="pilihBuku">Pilih buku</label>
+            <select id="pilihBuku" name="pilihBuku"></select>
+          </div>
+          <div>
+            <label for="jumlahBaru">Jumlah</label>
+            <input type="number" id="jumlahBaru" name="jumlahBaru" min="1" value="1" required>
+          </div>
+        </div>
+        <p id="pesanItem" class="pesan" aria-live="polite"></p>
+        <button type="submit" class="tombol-kuning">Tambah ke Keranjang</button>
+      </form>
+
+      <div class="bungkus-tabel">
+        <table>
+          <caption>Data pemesanan (jumlah bisa diubah)</caption>
+          <thead>
+            <tr><th>Buku</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="isiKeranjang"></tbody>
+          <tfoot>
+            <tr><td colspan="3">Total pembayaran</td><td colspan="2" id="totalBayar">Rp 0</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data Pemesan dan Pembayaran</h2>
+      <p class="catatan-info">Pesanan dikirim lewat JNE atau Pos Indonesia. Perkiraan tiba 2-4 hari kerja setelah pembayaran dikonfirmasi.</p>
+      <form id="formPesan" novalidate>
+        <div class="baris-form">
+          <div>
+            <label for="namaPemesan">Nama pemesan</label>
+            <input type="text" id="namaPemesan" name="namaPemesan" required>
+          </div>
+          <div>
+            <label for="emailPemesan">Email</label>
+            <input type="email" id="emailPemesan" name="emailPemesan" required>
+          </div>
+          <div>
+            <label for="telepon">No. telepon</label>
+            <input type="text" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+          </div>
+          <div>
+            <label for="metode">Metode pembayaran</label>
+            <select id="metode" name="metode" required>
+              <option value="">-- Pilih metode --</option>
+              <option value="Transfer Bank">Transfer Bank</option>
+              <option value="E-Wallet">E-Wallet</option>
+              <option value="COD">COD (Bayar di tempat)</option>
+            </select>
+          </div>
+        </div>
+        <label for="alamat">Alamat pengiriman</label>
+        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+        <p id="pesanPesan" class="pesan" aria-live="polite"></p>
+        <button type="submit">Pesan Sekarang</button>
+      </form>
+    </section>
+
+    <section id="ringkasan" hidden>
+      <h2>Pesanan Berhasil</h2>
+      <p>Nomor Delivery Order: <strong id="ringNomor"></strong></p>
+      <p>Pemesan: <span id="ringNama"></span></p>
+      <p>Pembayaran: <span id="ringMetode"></span></p>
+      <ul id="ringDaftar"></ul>
+      <p>Total: <strong id="ringTotal"></strong></p>
+    </section>
+  </main>
+  <footer>
+    <div class="kaki">
+      <div>
+        <p class="merek-kecil"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Toko Buku Online</span></p>
+        <p>Toko buku ajar online untuk mahasiswa. Cek stok, buat pesanan, dan lacak kiriman dari satu tempat.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Katalog &amp; Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking Pengiriman</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hubungi Kami</h3>
+        <ul>
+          <li>Cikarang Selatan, Kabupaten Bekasi</li>
+          <li>cs@tokobukuonline.id</li>
+          <li>0812-3456-7890 (WhatsApp)</li>
+          <li>Senin - Jumat, 08.00 - 16.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hak-cipta">&copy; 2026 Toko Buku Online - Tugas UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

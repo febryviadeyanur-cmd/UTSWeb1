@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Toko Buku Online</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="halaman-login">
+  <aside class="sisi-merek">
+    <div class="logo-baris">
+      <img src="assets/logo.svg" alt="Logo Toko Buku Online" width="64" height="64">
+      <h1>Toko Buku <em>Online</em></h1>
+    </div>
+    <p class="slogan">Buku ajar untuk kuliahmu, tinggal pesan dari rumah.</p>
+    <div class="tumpukan" aria-hidden="true">
+      <img src="img/kepemimpinan.jpg" alt="">
+      <img src="img/mikrobiologi.jpg" alt="">
+      <img src="img/manajemen_keuangan.jpg" alt="">
+      <img src="img/paud_perkembangan.jpg" alt="">
+    </div>
+    <p class="kecil">Pengiriman lewat JNE dan Pos Indonesia</p>
+  </aside>
+  <main class="kotak-login">
+    <h2>Masuk</h2>
+    <p class="sub">Silakan login untuk memesan buku.</p>
+    <form id="formLogin" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <p id="pesanLogin" class="pesan" aria-live="polite"></p>
+      <button type="submit">Login</button>
+    </form>
+    <div class="tautan-bawah">
+      <button type="button" class="tombol-link" data-buka="modalLupa">Lupa Password</button>
+      <button type="button" class="tombol-link" data-buka="modalDaftar">Daftar</button>
+    </div>
+    <details>
+      <summary>Akun untuk mencoba</summary>
+      <p>rina@gmail.com / rina123 (User)<br>siti@gmail.com / siti123 (Admin)</p>
+    </details>
+  </main>
+
+  <div id="modalLupa" class="modal tersembunyi">
+    <div class="isi-modal">
+      <h2>Lupa Password</h2>
+      <form id="formLupa" novalidate>
+        <label for="emailLupa">Email terdaftar</label>
+        <input type="email" id="emailLupa" name="emailLupa" required>
+        <p id="pesanLupa" class="pesan" aria-live="polite"></p>
+        <button type="submit">Kirim</button>
+        <button type="button" class="tombol-kuning" data-tutup="modalLupa">Tutup</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modalDaftar" class="modal tersembunyi">
+    <div class="isi-modal">
+      <h2>Daftar Akun</h2>
+      <form id="formDaftar" novalidate>
+        <label for="namaDaftar">Nama lengkap</label>
+        <input type="text" id="namaDaftar" name="namaDaftar" required>
+        <label for="emailDaftar">Email</label>
+        <input type="email" id="emailDaftar" name="emailDaftar" required>
+        <label for="passwordDaftar">Password (minimal 6 karakter)</label>
+        <input type="password" id="passwordDaftar" name="passwordDaftar" minlength="6" required>
+        <p id="pesanDaftar" class="pesan" aria-live="polite"></p>
+        <button type="submit">Daftar</button>
+        <button type="button" class="tombol-kuning" data-tutup="modalDaftar">Tutup</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

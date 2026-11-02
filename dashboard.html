@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Toko Buku Online</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="merek"><a href="dashboard.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Toko Buku <em>Online</em></span></a></h1>
+    <nav>
+        <a href="dashboard.html" class="aktif">Dashboard</a>
+        <a href="stok.html">Katalog</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html">Tracking</a>
+        <button type="button" id="tombolKeluar" class="tombol-kuning">Keluar</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="tanggal" id="tanggal"></p>
+        <h2 id="greeting">Selamat datang!</h2>
+        <p>Ini ringkasan toko hari ini. Pilih menu di bawah untuk mulai bekerja.</p>
+      </div>
+      <dl class="angka">
+        <div><dt>Judul buku</dt><dd id="angkaJudul">0</dd></div>
+        <div><dt>Total stok</dt><dd id="angkaStok">0</dd></div>
+        <div><dt>Pesanan dikirim</dt><dd id="angkaPesanan">0</dd></div>
+        <div><dt>Stok menipis</dt><dd id="angkaMenipis">0</dd></div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Menu Utama</h2>
+      <div class="menu">
+        <a href="stok.html" class="kartu-menu menu-1"><span class="ikon-kotak"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5C6 4.5 9 5 12 7c3-2 6-2.5 9-1.5V19c-3-1-6-.5-9 1.5-3-2-6-2.5-9-1.5z"/><path d="M12 7v13"/></svg></span><span class="teks-menu"><strong>Informasi Stok / Katalog</strong><span>Lihat dan tambah stok buku</span></span><span class="panah" aria-hidden="true">&rsaquo;</span></a>
+        <a href="tracking.html" class="kartu-menu menu-2"><span class="ikon-kotak"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></span><span class="teks-menu"><strong>Tracking Pengiriman</strong><span>Cek status dengan nomor DO</span></span><span class="panah" aria-hidden="true">&rsaquo;</span></a>
+        <a href="checkout.html" class="kartu-menu menu-3"><span class="ikon-kotak"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 12h7M8.5 16h5"/></svg></span><span class="teks-menu"><strong>Laporan Pemesanan</strong><span>Buat dan kelola pesanan</span></span><span class="panah" aria-hidden="true">&rsaquo;</span></a>
+        <button type="button" id="tombolRiwayat" class="kartu-menu menu-4"><span class="ikon-kotak"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span class="teks-menu"><strong>History Transaksi</strong><span>Lihat transaksi sebelumnya</span></span><span class="panah" aria-hidden="true">&rsaquo;</span></button>
+      </div>
+    </section>
+
+    <section id="riwayat" class="tersembunyi">
+      <h2>History Transaksi</h2>
+      <div class="bungkus-tabel">
+        <table>
+          <caption>Daftar transaksi dari data tracking</caption>
+          <thead>
+            <tr><th>No. DO</th><th>Pemesan</th><th>Tanggal Kirim</th><th>Ekspedisi</th><th>Total</th></tr>
+          </thead>
+          <tbody id="isiRiwayat"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Buku di Katalog</h2>
+      <p class="sub">Semua judul yang tersedia. Stok di bawah 200 diberi tanda.</p>
+      <div class="rak" id="rakBuku"></div>
+    </section>
+
+    <div class="dua-kolom">
+      <section>
+        <h2>Pengiriman Terbaru</h2>
+        <ul class="daftar-kirim" id="daftarKirim"></ul>
+      </section>
+      <section>
+        <h2>Cara Memesan</h2>
+        <ol class="langkah">
+          <li>Pilih buku di halaman <a href="stok.html">Katalog</a>.</li>
+          <li>Masukkan ke keranjang di halaman <a href="checkout.html">Pemesanan</a>.</li>
+          <li>Isi data pemesan dan pilih metode pembayaran.</li>
+          <li>Simpan nomor DO, lalu cek di <a href="tracking.html">Tracking</a>.</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="kaki">
+      <div>
+        <p class="merek-kecil"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Toko Buku Online</span></p>
+        <p>Toko buku ajar online untuk mahasiswa. Cek stok, buat pesanan, dan lacak kiriman dari satu tempat.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Katalog &amp; Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking Pengiriman</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hubungi Kami</h3>
+        <ul>
+          <li>Cikarang Selatan, Kabupaten Bekasi</li>
+          <li>cs@tokobukuonline.id</li>
+          <li>0812-3456-7890 (WhatsApp)</li>
+          <li>Senin - Jumat, 08.00 - 16.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hak-cipta">&copy; 2026 Toko Buku Online - Tugas UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

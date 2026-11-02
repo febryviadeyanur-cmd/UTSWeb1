@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Logo Toko Buku Online">
+  <circle cx="60" cy="60" r="57" fill="#17324d"/>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-dasharray="0.1 5.2" stroke-linecap="round"/>
+  <ellipse cx="39.8" cy="98.0" rx="2.6" ry="6.2" transform="rotate(146.0 39.8 98.0)" fill="#2a9d8f"/>
+  <ellipse cx="31.8" cy="92.5" rx="2.6" ry="6.2" transform="rotate(159.0 31.8 92.5)" fill="#5cc2b3"/>
+  <ellipse cx="25.2" cy="85.3" rx="2.6" ry="6.2" transform="rotate(172.0 25.2 85.3)" fill="#2a9d8f"/>
+  <ellipse cx="20.4" cy="76.8" rx="2.6" ry="6.2" transform="rotate(185.0 20.4 76.8)" fill="#5cc2b3"/>
+  <ellipse cx="17.7" cy="67.5" rx="2.6" ry="6.2" transform="rotate(198.0 17.7 67.5)" fill="#2a9d8f"/>
+  <ellipse cx="17.1" cy="57.7" rx="2.6" ry="6.2" transform="rotate(211.0 17.1 57.7)" fill="#5cc2b3"/>
+  <ellipse cx="80.2" cy="98.0" rx="2.6" ry="6.2" transform="rotate(34.0 80.2 98.0)" fill="#2a9d8f"/>
+  <ellipse cx="88.2" cy="92.5" rx="2.6" ry="6.2" transform="rotate(21.0 88.2 92.5)" fill="#5cc2b3"/>
+  <ellipse cx="94.8" cy="85.3" rx="2.6" ry="6.2" transform="rotate(8.0 94.8 85.3)" fill="#2a9d8f"/>
+  <ellipse cx="99.6" cy="76.8" rx="2.6" ry="6.2" transform="rotate(-5.0 99.6 76.8)" fill="#5cc2b3"/>
+  <ellipse cx="102.3" cy="67.5" rx="2.6" ry="6.2" transform="rotate(-18.0 102.3 67.5)" fill="#2a9d8f"/>
+  <ellipse cx="102.9" cy="57.7" rx="2.6" ry="6.2" transform="rotate(-31.0 102.9 57.7)" fill="#5cc2b3"/>
+  <!-- sampul buku -->
+  <path d="M25 42 V80 C37 77 52 78 60 85 C68 78 83 77 95 80 V42 Z" fill="#e9a91c"/>
+  <!-- halaman kiri & kanan -->
+  <path d="M60 83 C52 76 38 75 29 78 V37 C38 34 52 35 60 42 Z" fill="#fdf6e3" stroke="#17324d" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M60 83 C68 76 82 75 91 78 V37 C82 34 68 35 60 42 Z" fill="#fffaf0" stroke="#17324d" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M60 42 V83" stroke="#17324d" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- garis teks -->
+  <g stroke="#2a9d8f" stroke-width="1.5" stroke-linecap="round" fill="none">
+    <path d="M35 47 C41 46 47 47 54 50"/><path d="M35 54 C41 53 47 54 54 57"/><path d="M35 61 C41 60 47 61 54 64"/>
+  </g>
+  <g stroke="#c9b99a" stroke-width="1.5" stroke-linecap="round" fill="none">
+    <path d="M66 50 C73 47 79 46 85 47"/><path d="M66 57 C73 54 79 53 85 54"/>
+  </g>
+  <!-- pembatas buku -->
+  <path d="M73 33 H82 V58 L77.5 54 L73 58 Z" fill="#e76f51" stroke="#17324d" stroke-width="1.4" stroke-linejoin="round"/>
+</svg>
